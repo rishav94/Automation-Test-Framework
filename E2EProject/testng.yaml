@@ -1,0 +1,17 @@
+name: Suite
+configFailurePolicy: skip
+listeners:
+  - Academy.Listeners
+tests:
+  - name:  validate NavigationBAr Test
+  classes:
+    - Academy.ValidateNavigationBar
+
+  - name: Validate Title Test
+  classes:
+    - Academy.ValidateTitle
+
+  - name: Home page Test
+  classes:
+    - Academy.HomePage
+
