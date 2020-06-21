@@ -6,24 +6,27 @@ import org.openqa.selenium.WebElement;
 
 public class LoginPage {
 	WebDriver driver;
-	By email=By.id("user_email");
-	By password=By.id("user_password");
-	By login=By.cssSelector("input[value='Log In']");
-	
+	By email = By.id("user_email"); // login user email
+	By password = By.id("user_password"); // login password
+	By login = By.cssSelector("input[value='Log In']"); // login button
+
 	public LoginPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
-		this.driver=driver;
+		this.driver = driver;
 	}
 
-	public WebElement getemail() {
+	// Email field
+	public WebElement getEmail() {
 		return driver.findElement(email);
 	}
-	
-	public WebElement getpassword() {
+
+	// password field
+	public WebElement getPassword() {
 		return driver.findElement(password);
 	}
-	
-	public WebElement getlogin() {
+
+	// login Button
+	public WebElement getLogin() {
 		return driver.findElement(login);
 	}
 

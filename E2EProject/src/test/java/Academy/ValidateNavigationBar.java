@@ -19,17 +19,18 @@ import resources.base;
 
 public class ValidateNavigationBar extends base {
 	public WebDriver driver;
-	public static Logger log=LogManager.getLogger(base.class.getName());
+
+	public static Logger log = LogManager.getLogger(base.class.getName());
+
 	@BeforeTest
 	public void intitlizer() throws IOException {
 		driver = initializeDriver();
-		driver.get("http://www.qaclickacademy.com/");	
+		driver.get("http://www.qaclickacademy.com/");
 	}
 
 	@Test
 	public void basePageNavigation() throws IOException {
 
-		
 		// sdriver.findElement(By.xpath("//@button[text()='NO THANKS']")).click();
 		driver.manage().window().maximize();
 
@@ -37,11 +38,10 @@ public class ValidateNavigationBar extends base {
 		Assert.assertTrue(lp.getNavigationBar().isDisplayed());
 		log.info("successfully navigation bar is displayed");
 	}
-	
+
 	@AfterTest
 	public void tearDown() {
 		driver.close();
 	}
 
-		
 }

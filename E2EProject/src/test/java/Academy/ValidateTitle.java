@@ -19,30 +19,26 @@ import resources.base;
 
 public class ValidateTitle extends base {
 	public WebDriver driver;
-	public static Logger log=LogManager.getLogger(base.class.getName());
+	public static Logger log = LogManager.getLogger(base.class.getName());
+
 	@BeforeTest
 	public void intitlizer() throws IOException {
 		driver = initializeDriver();
-		driver.get("http://www.qaclickacademy.com/");	
+		driver.get("http://www.qaclickacademy.com/");
 	}
 
 	@Test
 	public void basePageNavigation() throws IOException {
-
-		
-		// sdriver.findElement(By.xpath("//@button[text()='NO THANKS']")).click();
 		driver.manage().window().maximize();
 
 		LandingPage lp = new LandingPage(driver);
 		Assert.assertEquals(lp.getTitle().getText(), "FEATURED COURSES123");
 		log.info("succesfully get the title");
 	}
-	
+
 	@AfterTest
 	public void tearDown() {
 		driver.close();
 	}
-	
 
-		
 }
